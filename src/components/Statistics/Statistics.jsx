@@ -17,5 +17,6 @@ Statistics.propTypes = {
   good: PropTypes.number,
   neutral: PropTypes.number,
   bad: PropTypes.number,
-  positivePercentage: PropTypes.func,
+  total:PropTypes.func,
+  positiRound: PropTypes.func,
 };

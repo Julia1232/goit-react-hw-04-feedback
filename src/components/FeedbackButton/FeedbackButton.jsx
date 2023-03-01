@@ -7,7 +7,7 @@ const FeedbackButton = ({ options, onIncrement }) => {
     return (
         <>
             {options.map((option) => (
-                <button key={shortid.generate()} type="button" name={option} onClick={onIncrement} className={css.FeedbackButton}>
+                <button key={option} type="button" name={option} onClick={onIncrement} className={css.FeedbackButton}>
                     {option}
                 </button>
             ))}
@@ -15,7 +15,7 @@ const FeedbackButton = ({ options, onIncrement }) => {
     )
 };
 FeedbackButton.propTypes = {
-    options: PropTypes.array.isRequired,
+    options: PropTypes.arrayOf(PropTypes.string).isRequired,
     onIncrement: PropTypes.func.isRequired,
 }
 export default FeedbackButton;
