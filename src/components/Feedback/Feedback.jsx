@@ -13,7 +13,6 @@ export default class Feedback extends Component {
          bad: 0
     }
 
-
     handleIncrement = (e) => {
         
         console.log(e)
@@ -22,9 +21,6 @@ export default class Feedback extends Component {
 			[name]: prevState[name] + 1
 		}));
     };
-
- 
-    
 
     countTotalFeedback = () => {   
        const result = this.state.bad + this.state.good + this.state.neutral;
@@ -37,32 +33,22 @@ export default class Feedback extends Component {
         return positive;
     }
 
-  
-
     render() {
         const objKey = Object.keys(this.state);
         const total = this.countTotalFeedback();
 		const positivePercentage = this.countPositiveFeedbackPercentage();
 
         const { good, neutral, bad } = this.state;
-
-
-     
+  
     return (
         <div className={css.FeedbackForm}>
 
             <Section  className={css.FeedbackForm__title} title="Please leave feedback">
 					<FeedbackButton  options={objKey} onIncrement={this.handleIncrement} />
-            </Section>
-
-            
-
+            </Section>      
             {total === 0 ?
-            
-                (<Notification message="There is no feedback" />)
-            
-                :
-
+                (<Notification message="There is no feedback" />) :
+                
                 (<Section title="Statisticsk">
                     <Statistics className={css.Feedback__value}
                         good={good}
@@ -72,14 +58,7 @@ export default class Feedback extends Component {
                         positiRound={positivePercentage}
                     />
                 </Section>)
-            }
-
-            
-            
-            
-
-
-        
+            }      
       </div>
     )
   }
