@@ -1,18 +1,10 @@
 import Feedback from "./Feedback/Feedback";
+import style from '../index.css'
 
 
 export const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
+    <div className={style.app}>
       <Feedback/>
     </div>
   );
